@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0efef;
+}
+.text{
+    height: 40vh;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight:700;
+    font-size: 200px;
+}
+.image{
+    display: block;
+    height: 60vh;
+    width:100%;
+    position: relative;
+}
+.image_span{
+    background: url('./astrid.jpg') center/cover no-repeat;
+    height: 80%;
+    width: 30%;
+    box-shadow:5px 5px 5px 5px  white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+}
