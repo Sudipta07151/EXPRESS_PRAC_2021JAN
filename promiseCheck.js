@@ -17,6 +17,12 @@ const empDetails = (resourceLocation) => {
 
 empDetails('./emp/emp1.json').then(data=>{
     console.log(data);
+    return empDetails('./emp/emp2.json')
+}).then(data=>{
+    console.log(data);
+    return empDetails('./emp/emp3.json')
+}).then(data=>{
+    console.log(data);
 }).catch(err=>{
     console.log(err)
 })
