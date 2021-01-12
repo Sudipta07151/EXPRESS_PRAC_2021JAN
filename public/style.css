@@ -14,6 +14,9 @@ body{
     font-weight:700;
     font-size: 200px;
 }
+.text:hover{
+    color:rgb(218, 18, 236);
+}
 .image{
     display: block;
     height: 60vh;
