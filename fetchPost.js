@@ -1,21 +1,32 @@
 
 document.getElementById('addPost').addEventListener('submit',addPost);
 function addPost(e){
+    e.preventDefault();
     let title = document.getElementById('title').value
     let body = document.getElementById('body').value
     console.log(title)
     console.log(body)
-    e.preventDefault();
    fetch('https://jsonplaceholder.typicode.com/posts',{
     method:'POST',
-    body:JSON.stringify({body:body,title:title, userId: 1,}),
     headers:{
-        'Accept':'application/json,text/plain,*/*,charset=UTF-8 ',
-        'Content-type':'application/json,charset=UTF-8 '
-    }
-   }).then(res=>{
-       res.json()
-   }).then(data=>{
-       console.log(data)
-   })
+        'Accept':'application/json,text/plain,*/*',
+        'Content-type':'application/json;charset=UTF-8'
+    },
+    body:JSON.stringify({title:title, body:body}),
+   }).then((response) => response.json())
+   .then((json) => console.log(json));
 }
+
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'foo',
+    body: 'bar',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+}).then((response) => response.json())
+.then((json) => console.log(json));
+  
